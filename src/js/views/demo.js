@@ -8,6 +8,10 @@ import "../../styles/demo.css";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
+	function eliminar (indexToDelete){
+		console.log ("eliminar" + indexToDelete)
+	}
+
 	return (
 		<div className="container">
 			<ul className="list-group">
@@ -33,6 +37,23 @@ export const Demo = () => {
 						</li>
 					);
 				})}
+				
+
+				{store.contacts.map((item, index) => {
+					return (
+						<li
+							key={index}
+							className="list-group-item d-flex justify-content-between"
+						>
+						{item.full_name}
+						<br></br>
+						{item.email}
+						<button onClick={()=>eliminar(index)}>ELIMINAR</button>
+						</li>
+					);
+				})}
+
+
 			</ul>
 			<br />
 			<Link to="/">

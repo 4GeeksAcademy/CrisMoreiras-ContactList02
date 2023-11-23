@@ -12,7 +12,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+
+			contacts: [
+				{
+					full_name: "FIRST CONTACT",
+					email: "f@gmail.com"
+				},
+				{
+					full_name: "SECOND CONTACT",
+					email: "s@gmail.com"
+				}
 			]
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
