@@ -31,7 +31,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
+			deleteContact: (indexToDelete) => {
+				const store = getStore();
+				setStore({ contacts: store.contacts.filter((item, index) => index!= indexToDelete) });
+
+			},
+
 			loadSomeData: () => {
+				console.log ("loadSomeData")
+				setStore({ contacts: [
+
+					{
+						full_name: "FIRST CONTACT 34",
+						email: "f@gmail.com"
+					},
+					{
+						full_name: "SECOND CONTACT 34",
+						email: "s@gmail.com"
+					}
+
+				] });
+
+				fetch ("https://playground.4geeks.com/apis/fake/contact/agenda/cristina-agenda")
+				.then( (Response) => Response.json())
+				.then( (data) => setStore({ contacts: data }))
+
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/

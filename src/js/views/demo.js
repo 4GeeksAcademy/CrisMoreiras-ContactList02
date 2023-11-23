@@ -10,6 +10,9 @@ export const Demo = () => {
 
 	function eliminar (indexToDelete){
 		console.log ("eliminar" + indexToDelete)
+		console.log (store.contacts)
+		console.log (store.contacts.filter((item, index) => index!= indexToDelete ))
+
 	}
 
 	return (
@@ -48,7 +51,7 @@ export const Demo = () => {
 						{item.full_name}
 						<br></br>
 						{item.email}
-						<button onClick={()=>eliminar(index)}>ELIMINAR</button>
+						<button onClick={()=>actions.deleteContact(index)}>ELIMINAR</button>
 						</li>
 					);
 				})}
