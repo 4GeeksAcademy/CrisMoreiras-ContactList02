@@ -39,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			loadSomeData: () => {
-				console.log ("loadSomeData")
+				//console.log ("loadSomeData")
 				setStore({ contacts: [
 
 					{
